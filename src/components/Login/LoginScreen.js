@@ -9,24 +9,19 @@ import {connect} from 'react-redux';
 import { 
   View, 
   Text, 
-  Image, 
-  ScrollView, 
   TextInput, 
   StyleSheet, 
   TouchableOpacity,
-  Dimensions,
   ActivityIndicator,
   Animated,
   Keyboard,
-  KeyboardAvoidingView,
-  Alert
 } from 'react-native';
 
 // import LoginData from '../APIs/LoginData';
-import {setLoginToken} from '../actions/index'
+import {setLoginToken} from '../../actions/index'
 
 const LOGO_CIRCLE_HEIGHT = 150;
-const LOGO_SMALL_CIRCLE_HEIGHT = 75;
+const LOGO_SMALL_CIRCLE_HEIGHT = 100;
 const LOGO_WIDTH = 75;
 const LOGO_SMALL_WIDTH = 50;
 
@@ -57,13 +52,10 @@ const LoginScreen = (props) => {
   }
 
   const [data, setData] = useState(initData);
-
   const [isPasswordValid, setIsPasswordValid] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-
   const [inputIDFocus, setInputIDFocus] = useState(false);
   const [inputPasswordFocus, setInputPasswordFocus] = useState(false);
-
   const [passwordShow, setPasswordShow] = useState(false);
 
   const IDWrapStyle = inputIDFocus? styles.inputWrapFocus : styles.inputWrap;
@@ -83,13 +75,13 @@ const LoginScreen = (props) => {
   useEffect(() => {
     const showSubscription = Keyboard.addListener("keyboardDidShow", () => {
       Animated.timing(resizeLogoCircleAnim,{
-        duration: 500,
+        duration: 700,
         toValue: LOGO_SMALL_CIRCLE_HEIGHT,
         useNativeDriver: false
       }).start();
 
       Animated.timing(resizeLogoAnim,{
-        duration: 500,
+        duration: 700,
         toValue: LOGO_SMALL_WIDTH,
         useNativeDriver: false
       }).start();
@@ -234,7 +226,7 @@ const LoginScreen = (props) => {
             <Animated.View style={[styles.circle, {height:resizeLogoCircleAnim, width:resizeLogoCircleAnim}]}>
               <Animated.Image 
                 style={[styles.logo, {width:resizeLogoAnim}]}
-                source={require('../images/logo.png')}
+                source={require('../../images/logo.png')}
                 resizeMode="stretch"
               ></Animated.Image>
             </Animated.View>
@@ -243,7 +235,7 @@ const LoginScreen = (props) => {
         <Animatable.View
           animation="lightSpeedIn"
           style={styles.logoTextWrap}>
-          <Text style={styles.logoText}>Awsome Snowbridge</Text>
+          <Text style={styles.logoText}>Snowbridge</Text>
         </Animatable.View>
       </View>
       {/* <Animatable.View 
@@ -307,7 +299,7 @@ const styles = StyleSheet.create({
   container:{
     flex: 1,
     fontSize: 25,
-    // backgroundColor:'#0f659d',
+    backgroundColor:'white',
     justifyContent:'flex-end',
 
   },
@@ -316,6 +308,9 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     paddingTop: 30,
+    backgroundColor:'#0f659d',
+    borderBottomRightRadius: 125,
+    paddingHorizontal: 30
   },  
   loadingWrap:{
     flex:1,
@@ -324,7 +319,7 @@ const styles = StyleSheet.create({
     marginTop: 200
   },
   logoWrap:{
-    flex:1,
+    flex:2,
     alignItems: 'center',
     justifyContent: 'space-around',
     padding: 5,
@@ -352,23 +347,23 @@ const styles = StyleSheet.create({
 
   },
   logoText:{
-    color:'#0f659d',
+    color:'white',
     fontSize: 36,
     fontFamily:"DancingScript-Regular",
     
   },  
   footer:{
     flex:1,
-    // backgroundColor: 'white',
-    // borderTopLeftRadius: 30,
-    // borderTopRightRadius: 30,
-    // paddingVertical: 50,
-    // paddingHorizontal: 30
+    backgroundColor: '#0f659d',
   },
+
   inputContainer:{
     flex:2,
+    backgroundColor: 'white',
     justifyContent: 'flex-start',
     alignItems: 'center',
+    borderTopLeftRadius: 125,
+    paddingTop:75
   },
   inputWrap:{
     width: 250,
@@ -413,8 +408,8 @@ const styles = StyleSheet.create({
   },
   loginBtn:{
     borderWidth: 1,      
-    // borderColor: '#0f659d',
-    borderRadius: 15,
+    borderColor: '#0f659d',
+    borderRadius: 10,
     width:250,
     alignItems:'center',    
     paddingVertical:5

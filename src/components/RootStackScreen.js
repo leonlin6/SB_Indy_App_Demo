@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 
-import LoginScreen from "./LoginScreen";
-import LogoutScreen from './LogoutScreen';
-// import SplashScreen from './SplashScreen';
-// import FingerprintScreen from './FingerprintScreen';
+import LoginScreen from "./Login/LoginScreen";
+import LogoutScreen from './Login/LogoutScreen';
+// import SplashScreen from './Login/SplashScreen';
 
 import { createStackNavigator } from "@react-navigation/stack";
 
