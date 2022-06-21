@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import LoginScreen from "./Login/LoginScreen";
 import LogoutScreen from './Login/LogoutScreen';
-// import SplashScreen from './Login/SplashScreen';
+import SplashScreen from './Login/SplashScreen';
 
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -11,10 +11,24 @@ const RootStack = createStackNavigator();
 
 
 const RootStackScreen = () => {
+    const [showSplash, setShowSplash] = useState(true);
+
+    useEffect(()=>{
+        setTimeout(() => {
+            setShowSplash(false);
+        },500)
+    },[])
+
     return(
         <RootStack.Navigator headerShown={false}>
-            {/* <RootStack.Screen name="Splash" component={SplashScreen}></RootStack.Screen> */}
-            <RootStack.Screen name="Login" component={LoginScreen}></RootStack.Screen>
+            {
+                showSplash === true ? (
+                    <RootStack.Screen name="Splash" options={{headerShown: false}} component={SplashScreen}></RootStack.Screen>
+                ):
+                (
+                    <RootStack.Screen name="Login" options={{headerShown: false}} component={LoginScreen}></RootStack.Screen>
+                )
+            }
         </RootStack.Navigator>
     );
 }
