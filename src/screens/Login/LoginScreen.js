@@ -226,7 +226,7 @@ const LoginScreen = (props) => {
             <Animated.View style={[styles.circle, {height:resizeLogoCircleAnim, width:resizeLogoCircleAnim}]}>
               <Animated.Image 
                 style={[styles.logo, {width:resizeLogoAnim}]}
-                source={require('../../images/logo.png')}
+                source={require('../../assets/images/logo.png')}
                 resizeMode="stretch"
               ></Animated.Image>
             </Animated.View>

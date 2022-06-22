@@ -14,8 +14,8 @@ import { Dropdown } from 'react-native-element-dropdown';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
 
-import LoadingComponent from '../utils/LoadingComponent';
-import {Colors} from '../utils/Colors';
+import LoadingComponent from '../../components/utils/LoadingComponent';
+import {Colors} from '../../components/utils/Colors';
 import RuleCard from './RuleCard';
 import * as Animatable from 'react-native-animatable';
 
@@ -49,7 +49,7 @@ const QRCodeScreen = (props) => {
               onPress={onLoadingShow}>
               <Image
                   style={styles.logo}
-                  source={require('../../images/QR_Code_Logo.png')}
+                  source={require('../../assets/images/QR_Code_Logo.png')}
               ></Image>
             </TouchableOpacity>
 

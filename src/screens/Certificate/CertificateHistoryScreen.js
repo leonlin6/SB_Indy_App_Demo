@@ -1,26 +1,30 @@
-import React, {useState} from 'react';
+
+import React, {useEffect, useState} from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { 
   View, 
+  Text, 
+  Image, 
+  ScrollView, 
   TextInput, 
   StyleSheet, 
   TouchableOpacity,
+  Dimensions,
+  Linking,
+  Button
 } from 'react-native';
-import ListComponent from '../utils/ListComponent';
-import { ScrollView } from 'react-native-gesture-handler';
+import ListComponent from '../../components/utils/ListComponent';
 
-const DefinitionListScreen = (props) => {
+const CertificateHistoryScreen = (props) => {
   const [text, setText] = useState('');
   const [data, setData] = useState({test:1234});
 
   const onChangeText = () => {
-  }
-
-  const onAddDefinition = () => {
-    props.navigation.push('DefinitionEstablish');
       
   }
 
+
+  // render page
   return (
     <View style={styles.container}>
       <View style={styles.searchArea}>
@@ -34,13 +38,15 @@ const DefinitionListScreen = (props) => {
         </View>
       </View>
       <View style={styles.listArea}>
-        <ScrollView>
-          <ListComponent data={data} displayType={'reader'} navigation={props.navigation} toPageType={'DefinitionDetail'}> </ListComponent>
-        </ScrollView>
+        <ListComponent 
+          data={data} 
+          displayType={'list'} 
+          navigation={props.navigation} 
+          toPageType={'CertificateHistoryDetail'}
+          from={props.route.params.from}
+        > 
+        </ListComponent>
       </View>
-      <TouchableOpacity onPress={onAddDefinition}>
-        <Ionicons style={styles.addDefinitionBtn} name="md-add-circle" size={60} color='#2196f3'></Ionicons>
-      </TouchableOpacity>
     </View>
   );
 }
@@ -80,16 +86,47 @@ const styles = StyleSheet.create({
     flex:1
   },
   listArea:{
-    flex:8,
+    flex:7,
 
   },
-  addDefinitionBtn:{
-    position:'absolute',
-    bottom: 20,
-    right:20
+  card:{
+      height:150,
+      margin:20,
+      marginTop:0,
+      backgroundColor:'#215cf3',
+      paddingTop: 20,
+      borderRadius:20,
+      shadowColor: 'black',
+      shadowOpacity: 0.26,
+      shadowOffset: { width: 0, height: 2},
+      shadowRadius: 10,
+      elevation: 3,
+
+  },
+  dateArea:{
+    backgroundColor:'#2196f3',
+
+  },
+  dateText:{
+    height:20,
+
+    color:'white',
+    textAlign:'right',
+    paddingRight:5
+
+  },
+  nameArea:{
+    flex:1,
+    width:200,
+    justifyContent:'flex-end',
+    paddingLeft:10,
+    paddingBottom: 10
+  },
+  credentialName:{
+    color:'white',
   }
   
 
 });
 
-export default DefinitionListScreen;
+export default CertificateHistoryScreen;

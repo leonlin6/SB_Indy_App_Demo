@@ -2,30 +2,24 @@ import React, {useEffect, useState} from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { 
   View, 
+  Text, 
+  Image, 
+  ScrollView, 
   TextInput, 
   StyleSheet, 
   TouchableOpacity,
+  Dimensions,
+  Linking,
+  Button
 } from 'react-native';
-import ListComponent from '../utils/ListComponent';
+import ListComponent from '../../components/utils/ListComponent';
 
-const CredentialListScreen = (props) => {
+const CredentialHistoryScreen = (props) => {
   const [text, setText] = useState('');
-  const [displayType, setDisplayType] = useState('card');
-  const [displayTypeIcon, setDisplayTypeIcon] = useState('reader');
   const [data, setData] = useState({test:1234});
 
   const onChangeText = () => {
       
-  }
-
-  const onClickDisplay = () => {
-    if(displayType === 'card'){
-      setDisplayType('list');
-      setDisplayTypeIcon('reader');
-    }else{
-      setDisplayType('card');
-      setDisplayTypeIcon('ios-card-outline');
-    }
   }
 
 
@@ -41,20 +35,13 @@ const CredentialListScreen = (props) => {
             placeholder="please enter credential name"
           />
         </View>
-        <View style={styles.displayBtn}>
-          <TouchableOpacity
-            style={styles.contentBtn}
-            onPress={onClickDisplay}>
-            <Ionicons name={displayTypeIcon} size={30} color='black'></Ionicons>
-          </TouchableOpacity>
-        </View>
       </View>
       <View style={styles.listArea}>
         <ListComponent 
           data={data} 
-          displayType={displayType} 
+          displayType={'list'} 
           navigation={props.navigation} 
-          toPageType={'CredentialDetail'}
+          toPageType={'CredentialHistoryDetail'}
           from={props.route.params.from}
         > 
         </ListComponent>
@@ -141,4 +128,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default CredentialListScreen;
+export default CredentialHistoryScreen;

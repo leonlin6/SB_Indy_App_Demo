@@ -13,8 +13,8 @@ import {
   Animated,
   KeyboardAvoidingView
 } from 'react-native';
-import LoadingComponent from '../utils/LoadingComponent';
-import {Colors} from '../utils/Colors'
+import LoadingComponent from '../../components/utils/LoadingComponent';
+import {Colors} from '../../components/utils/Colors';
 
 const SCREEN_HEIGHT = Dimensions.get("window").height;
 const SCREEN_WIDTH = Dimensions.get("window").width;
@@ -186,7 +186,7 @@ const DC_SettingKeyScreen = (props) => {
                   onPress={onShowLoading}>
                   <Image
                       style={styles.logo}
-                      source={require('../../images/QR_Code_Logo.png')}
+                      source={require('../../assets/images/QR_Code_Logo.png')}
                   ></Image>
                 </TouchableOpacity>
               </View>

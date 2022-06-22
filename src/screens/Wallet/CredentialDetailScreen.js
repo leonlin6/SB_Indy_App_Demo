@@ -10,7 +10,7 @@ import {
 } from 'react-native';
   
 import { ListItem, Dialog,} from '@rneui/themed'
-import {Colors} from '../utils/Colors'
+import {Colors} from '../../components/utils/Colors';
 
 
 const CredentialDetailScreen = (props) => {

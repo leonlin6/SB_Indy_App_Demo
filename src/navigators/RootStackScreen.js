@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
-import LoginScreen from "./Login/LoginScreen";
-import LogoutScreen from './Login/LogoutScreen';
-import SplashScreen from './Login/SplashScreen';
+import LoginScreen from "../screens/Login/LoginScreen";
+import LogoutScreen from '../screens/Login/LogoutScreen';
+import SplashScreen from '../screens/Login/SplashScreen';
 
 import { createStackNavigator } from "@react-navigation/stack";
 

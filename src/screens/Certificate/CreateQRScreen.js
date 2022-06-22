@@ -11,7 +11,7 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
 
-import {Colors} from '../utils/Colors';
+import {Colors} from '../../components/utils/Colors';
 
 import RuleCard from './RuleCard';
 import * as Animatable from 'react-native-animatable';

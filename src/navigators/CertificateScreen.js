@@ -63,7 +63,7 @@ const CertificateScreen = (props) => {
         <View style={styles.imageArea}>
           <Image 
             style={styles.cardImage}
-            source={require('../images/certificate_scan_image.png')}
+            source={require('../assets/images/certificate_scan_image.png')}
           ></Image>
         </View>
       </View>
@@ -71,7 +71,7 @@ const CertificateScreen = (props) => {
         <View style={styles.imageArea}>
           <Image 
             style={styles.cardImage}
-            source={require('../images/certificate_history_image.png')}
+            source={require('../assets/images/certificate_history_image.png')}
           ></Image>
         </View>
         <View style={styles.contentArea}>

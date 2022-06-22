@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Colors} from '../utils/Colors';
+import {Colors} from '../../components/utils/Colors';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { 
   View, 

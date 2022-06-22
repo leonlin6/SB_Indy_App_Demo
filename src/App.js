@@ -10,46 +10,49 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {Colors} from './utils/Colors'
+import {Colors} from './components/utils/Colors'
+
+// navigators
+import RootStackScreen from './navigators/RootStackScreen';
+import WalletScreen from './navigators/WalletScreen';
+import CertificateScreen from './navigators/CertificateScreen';
+
 
 // Login Page
-import RootStackScreen from './RootStackScreen';
-import LogoutScreen from './Login/LogoutScreen';
+import LogoutScreen from './screens/Login/LogoutScreen';
 
-// Tab Navigation
-import WalletScreen from './WalletScreen';
-import CertificateScreen from './CertificateScreen';
 
 // Wallet Page
-import CredentialListScreen from './Wallet/CredentialListScreen';
-import CredentialDetailScreen from './Wallet/CredentialDetailScreen';
-import CreateCredentialScreen from './Wallet/CreateCredentialScreen';
-import CredentialHistoryScreen from './Wallet/CredentialHistoryScreen';
-import CredentialHistoryDetailScreen from './Wallet/CredentialHistoryDetailScreen';
-import InternetSettingScreen from './Wallet/InternetSettingScreen';
+import CredentialListScreen from './screens/Wallet/CredentialListScreen';
+import CredentialDetailScreen from './screens/Wallet/CredentialDetailScreen';
+import CreateCredentialScreen from './screens/Wallet/CreateCredentialScreen';
+import CredentialHistoryScreen from './screens/Wallet/CredentialHistoryScreen';
+import CredentialHistoryDetailScreen from './screens/Wallet/CredentialHistoryDetailScreen';
+import InternetSettingScreen from './screens/Wallet/InternetSettingScreen';
 
 // Wallet Page - Create Credential
-import SchemaListScreen from './Wallet/SchemaListScreen';
-import DefinitionListScreen from './Wallet/DefinitionListScreen';
-import DC_SettingKeyScreen from './Wallet/DC_SettingKeyScreen';
+import SchemaListScreen from './screens/Wallet/SchemaListScreen';
+import DefinitionListScreen from './screens/Wallet/DefinitionListScreen';
+import DC_SettingKeyScreen from './screens/Wallet/DC_SettingKeyScreen';
 
-import DefinitionDetailScreen from './Wallet/DefinitionDetailScreen';
-import DefinitionEstablishScreen from './Wallet/DefinitionEstablishScreen';
-import DE_SelectSchemaScreen from './Wallet/DE_SelectSchemaScreen';
-import SelectDefinitionScreen from './Wallet/SelectDefinitionScreen';
-import GetCredentialScreen from './Wallet/GetCredentialScreen';
+import DefinitionDetailScreen from './screens/Wallet/DefinitionDetailScreen';
+import DefinitionEstablishScreen from './screens/Wallet/DefinitionEstablishScreen';
+import DE_SelectSchemaScreen from './screens/Wallet/DE_SelectSchemaScreen';
+import SelectDefinitionScreen from './screens/Wallet/SelectDefinitionScreen';
+import GetCredentialScreen from './screens/Wallet/GetCredentialScreen';
 
 
 // Certificate Page
-import ScanScreen from './Certificate/ScanScreen';
-import CreateQRScreen from './Certificate/CreateQRScreen';
-import QRCodeScreen from './Certificate/QRCodeScreen';
-import CertificateHistoryScreen from './Certificate/CertificateHistoryScreen';
-import CertificateHistoryDetailScreen from './Certificate/CertificateHistoryDetailScreen';
+import ScanScreen from './screens/Certificate/ScanScreen';
+import CreateQRScreen from './screens/Certificate/CreateQRScreen';
+import QRCodeScreen from './screens/Certificate/QRCodeScreen';
+import CertificateHistoryScreen from './screens/Certificate/CertificateHistoryScreen';
+import CertificateHistoryDetailScreen from './screens/Certificate/CertificateHistoryDetailScreen';
 
 // utils
-import SuccessScreen from './utils/SuccessScreen';
+import SuccessScreen from './components/utils/SuccessScreen';
 
+import IndyTest from './screens/IndyTest';
 
 
 
@@ -152,6 +155,7 @@ const App = (props) => {
         <Stack.Navigator>
             {props.loginToken !== null ? 
             (<Stack.Screen name='TabContainer' component={TabContainer} options={{headerShown: false}}></Stack.Screen>) : 
+            {/* (<Stack.Screen name='IndyTest' component={IndyTest} options={{headerShown: false}}></Stack.Screen>) :  */}
             (<Stack.Screen name='RootStackScreen' component={RootStackScreen} options={{headerShown: false}}></Stack.Screen>)
           } 
 

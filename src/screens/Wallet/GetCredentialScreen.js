@@ -11,7 +11,7 @@ import { RNCamera } from 'react-native-camera';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Dialog,} from '@rneui/themed'
-import LoadingComponent from '../utils/LoadingComponent';
+import LoadingComponent from '../../components/utils/LoadingComponent';
 
 
 const GetCredentialScreen = (props) => {

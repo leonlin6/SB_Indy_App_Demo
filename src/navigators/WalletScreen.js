@@ -6,7 +6,7 @@ import {
   StyleSheet, 
   TouchableOpacity,
 } from 'react-native';
-import InternetSetting from './Wallet/InternetSettingScreen'
+import InternetSetting from '../screens/Wallet/InternetSettingScreen'
 
 
 const WalletScreen = (props) => {

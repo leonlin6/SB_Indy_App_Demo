@@ -12,7 +12,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 const SplashScreen = () => {
     return(
         <SafeAreaView style={styles.container}>
-          <Image style={styles.logo} source={require('../../images/logo.png')}/>
+          <Image style={styles.logo} source={require('../../assets/images/logo.png')}/>
         </SafeAreaView>
     );
 }

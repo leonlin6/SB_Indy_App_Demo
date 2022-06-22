@@ -25,6 +25,7 @@
     "react-native-camera": "^4.2.1",
     "react-native-element-dropdown": "^1.8.10",
     "react-native-gesture-handler": "^2.3.2",
+    "react-native-gradle-plugin": "^0.0.7",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-qrcode-scanner": "^1.5.5",
     "react-native-reanimated": "^2.8.0",
